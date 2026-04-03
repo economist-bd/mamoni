@@ -1,0 +1,21 @@
+{
+  "name": "মনোযোগী শিশু - ডিজনি স্টাইল",
+  "short_name": "মনোযোগী শিশু",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#87CEEB",
+  "theme_color": "#FF1493",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/FF1493/FFFFFF?text=🪄",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/FF1493/FFFFFF?text=🪄",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
