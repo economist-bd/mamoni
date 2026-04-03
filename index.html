@@ -587,14 +587,14 @@
             }
         }
 
-        // সার্ভিস ওয়ার্কার রেজিস্টার
-        function registerServiceWorker() {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('✅ PWA সার্ভিস ওয়ার্কার রেজিস্টার হয়েছে', reg))
-                    .catch(err => console.log('⚠️ সার্ভিস ওয়ার্কার ফেল:', err));
-            }
-        }
+        // সার্ভিস ওয়ার্কার রেজিস্টার (এই লাইনটা চেঞ্জ করুন)
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/mamoni/sw.js')   // ← এটাই গুরুত্বপূর্ণ
+            .then(reg => console.log('✅ PWA সার্ভিস ওয়ার্কার রেজিস্টার হয়েছে', reg))
+            .catch(err => console.log('⚠️ সার্ভিস ওয়ার্কার ফেল:', err));
+    }
+}
 
         // অ্যাপ শুরু
         function initApp() {
