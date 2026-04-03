@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF1493">
+    <meta name="description" content="শিশুদের পড়াশোনায় মনোযোগ বাড়ানোর ৫০+ ডিজনি কার্টুন স্টাইলের মজার উপায়! PWA অ্যাপ">
+    <title>🪄 মনোযোগী শিশু 🪄 | ডিজনি স্টাইলে ৫০ উপায়</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&amp;display=swap');
+        
+        :root {
+            --primary: #FF1493;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #87CEEB, #FFB6C1, #98FB98);
+            background-size: 400% 400%;
+            animation: skyMove 25s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes skyMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(255, 20, 147, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            background: linear-gradient(90deg, #FF0000, #FF8C00, #FFD700, #00FF00, #00FFFF, #0000FF, #FF00FF);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowText 8s linear infinite;
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        @keyframes rainbowText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        button {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            background: #FF1493;
+            color: white;
+            box-shadow: 0 6px 0 #C8107E;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #C8107E;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background: white;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 12px 12px 0 rgba(255, 20, 147, 0.2);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tip-card:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 20px 20px 0 rgba(255, 140, 0, 0.3);
+        }
+        
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD700 0%, transparent 70%);
+            opacity: 0.2;
+            animation: sparkle 4s linear infinite;
+        }
+        
+        .emoji {
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 12px;
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        .tip-number {
+            background: #FF1493;
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0 auto 10px;
+            box-shadow: 0 4px 0 #C8107E;
+        }
+        
+        .tip-text {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            text-align: center;
+            color: #333;
+            animation: textColorShift 12s linear infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes textColorShift {
+            0% { color: #FF0000; }
+            14% { color: #FF8C00; }
+            28% { color: #FFD700; }
+            42% { color: #00FF00; }
+            57% { color: #00FFFF; }
+            71% { color: #0000FF; }
+            85% { color: #FF00FF; }
+            100% { color: #FF0000; }
+        }
+        
+        .share-btn {
+            margin-top: 15px;
+            background: #00BFFF;
+            font-size: 1rem;
+            padding: 8px 16px;
+            width: 100%;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 20px 0 #FF1493;
+            animation: popIn 0.4s;
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.6); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Install Banner - ডিজনি স্টাইল */
+        #install-banner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #FF1493, #FFD700);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 40px;
+            box-shadow: 0 25px 0 #C8107E;
+            text-align: center;
+            z-index: 9999;
+            max-width: 380px;
+            width: 92%;
+            animation: bannerPop 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        #install-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #C8107E;
+        }
+        
+        .banner-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .close-banner {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        /* Mobile friendly - সব ডিভাইসে পারফেক্ট */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.9rem; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .tip-card { margin: 10px 0; }
+        }
+        
+        .sparkles {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: sparkleAnim 3s linear infinite;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>🪄</span>
+            <span>🐭</span>
+            <span>🏰</span>
+        </div>
+        <h1>শিশুদের পড়াশোনায় মনোযোগ বৃদ্ধির ৫০+ মজার উপায়</h1>
+        
+        <div class="header-right">
+            <button onclick="shareApp()">
+                📤 অ্যাপ শেয়ার করুন
+            </button>
+            <button onclick="showAddModal()" style="background:#00BFFF; box-shadow:0 6px 0 #0080B3;">
+                ➕ নতুন উপায় যোগ করুন
+            </button>
+            <div id="install-status" style="font-size:0.9rem; padding:8px 14px; background:#FFD700; color:#333; border-radius:50px; white-space:nowrap;">
+                📱 মোবাইল রেডি
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div style="text-align:center; margin-bottom:25px;">
+            <p style="font-size:1.4rem; color:#333; text-shadow:2px 2px 0 #fff;">🧚‍♀️ ডিজনি কার্টুনের মতো রঙিন ও মজাদার! লেখার রং সবসময় বদলায় ✨</p>
+        </div>
+
+        <div id="tips-grid" class="tips-grid">
+            <!-- JavaScript দিয়ে তৈরি হবে -->
+        </div>
+    </div>
+
+    <!-- ইনস্টল ব্যানার - প্রতি ২০ সেকেন্ডে দেখাবে যদি ইনস্টল না হয় -->
+    <div id="install-banner">
+        <span class="close-banner" onclick="hideInstallBanner()">✕</span>
+        <h2>🪄 ডিজনি ম্যাজিক অ্যাপ ইনস্টল করুন!</h2>
+        <p style="font-size:1.3rem; margin:15px 0;">শিশুরা অফলাইনেও পড়তে পারবে। কোনো ইন্টারনেট লাগবে না! 🎉</p>
+        <div class="banner-buttons">
+            <button onclick="installApp()" style="background:#FFD700; color:#333; flex:1; box-shadow:0 6px 0 #B38B00;">
+                📲 এখনই ইনস্টল করুন
+            </button>
+            <button onclick="hideInstallBanner()" style="background:#fff; color:#FF1493; flex:1; box-shadow:0 6px 0 #C8107E;">
+                পরে দেখব
+            </button>
+        </div>
+        <p style="font-size:0.9rem; margin-top:15px; opacity:0.9;">প্রতি ২০ সেকেন্ডে মনে করিয়ে দিচ্ছি যাতে আপনি মিস না করেন ✨</p>
+    </div>
+
+    <!-- নতুন উপায় যোগ করার মোডাল -->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="text-align:center; color:#FF1493; margin-bottom:20px;">🪄 নতুন কার্যকরী উপায় যোগ করুন</h2>
+            <input id="new-tip-text" type="text" placeholder="উপায় লিখুন (যেমন: প্রতিদিন বাইরে খেলার পর পড়া শুরু করুন)" 
+                   style="width:100%; padding:15px; border-radius:20px; border:4px solid #FF1493; font-size:1.1rem; margin-bottom:15px;">
+            <input id="new-tip-emoji" type="text" placeholder="ইমোজি দিন (ঐচ্ছিক) যেমন: 🌳" maxlength="2"
+                   style="width:100%; padding:15px; border-radius:20px; border:4px solid #00BFFF; font-size:1.8rem; text-align:center; margin-bottom:20px;">
+            <div style="display:flex; gap:15px;">
+                <button onclick="addNewTip()" style="flex:1; background:#00BFFF;">✅ যোগ করুন</button>
+                <button onclick="hideAddModal()" style="flex:1; background:#FF1493;">বাতিল</button>
+            </div>
+            <small style="display:block; text-align:center; margin-top:15px; color:#666;">সব উপায় লোকাল স্টোরেজে সেভ হয়ে যাবে এবং অফলাইনেও থাকবে</small>
+        </div>
+    </div>
+
+    <script>
+        // ৫০ টি হার্ডকোডেড ডিজনি স্টাইলের উপায়
+        let defaultTips = [
+            { id: 1, emoji: "🏠", text: "শান্ত ও আরামদায়ক পড়ার জায়গা তৈরি করুন" },
+            { id: 2, emoji: "⏰", text: "প্রতিদিন একই সময়ে পড়াশোনার রুটিন তৈরি করুন" },
+            { id: 3, emoji: "🔨", text: "বড় কাজগুলোকে ছোট ছোট ধাপে ভাগ করুন" },
+            { id: 4, emoji: "⏳", text: "পোমোডোরো টেকনিক ব্যবহার করুন (২৫ মিনিট পড়া + ৫ মিনিট খেলা)" },
+            { id: 5, emoji: "🎲", text: "পড়াশোনাকে খেলায় পরিণত করুন" },
+            { id: 6, emoji: "🏆", text: "সফলতার জন্য ছোট ছোট পুরস্কার দিন" },
+            { id: 7, emoji: "🏃‍♂️", text: "নিয়মিত শারীরিক ব্যায়াম করান" },
+            { id: 8, emoji: "🍎", text: "স্বাস্থ্যকর খাবার ও ফল খাওয়ান" },
+            { id: 9, emoji: "🛌", text: "প্রতিদিন ৮-১০ ঘণ্টা ঘুম নিশ্চিত করুন" },
+            { id: 10, emoji: "📵", text: "পড়ার সময় মোবাইল ও টিভি বন্ধ রাখুন" },
+            { id: 11, emoji: "🎵", text: "মজার গান বা মিউজিক দিয়ে পড়ান" },
+            { id: 12, emoji: "🖼️", text: "ভিজ্যুয়াল চার্ট ও ছবি ব্যবহার করুন" },
+            { id: 13, emoji: "❤️", text: "শিশুর আগ্রহ অনুসারে বিষয় বেছে নিন" },
+            { id: 14, emoji: "👥", text: "বন্ধুদের সাথে গ্রুপ স্টাডি করান" },
+            { id: 15, emoji: "❓", text: "পড়ার পর রিভিউ করে প্রশ্ন করুন" },
+            { id: 16, emoji: "👍", text: "ইতিবাচক উৎসাহ ও প্রশংসা দিন" },
+            { id: 17, emoji: "🧘", text: "শ্বাস-প্রশ্বাসের ব্যায়াম শেখান" },
+            { id: 18, emoji: "🌳", text: "প্রকৃতির মাঝে পড়াশোনা করান" },
+            { id: 19, emoji: "📱", text: "স্ক্রিন টাইম সীমিত করুন" },
+            { id: 20, emoji: "🎯", text: "লক্ষ্য নির্ধারণ করতে শেখান" },
+            { id: 21, emoji: "🧠", text: "মেমরি গেমস খেলুন" },
+            { id: 22, emoji: "📖", text: "কাহিনী শোনানোর মাধ্যমে শেখান" },
+            { id: 23, emoji: "✂️", text: "হাতের কাজ (ক্রাফট) দিয়ে লার্নিং করান" },
+            { id: 24, emoji: "📊", text: "প্রতিদিনের অগ্রগতি ট্র্যাক করুন" },
+            { id: 25, emoji: "🦸", text: "শিশুকে স্বাধীনতা দিন কিন্তু গাইড করুন" },
+            { id: 26, emoji: "🌟", text: "ফলাফলের চেয়ে চেষ্টাকে বেশি প্রশংসা করুন" },
+            { id: 27, emoji: "☕", text: "নিয়মিত বিরতি নেওয়া শেখান" },
+            { id: 28, emoji: "🖍️", text: "সুন্দর নোটবুক ও রঙিন পেন ব্যবহার করুন" },
+            { id: 29, emoji: "🧘‍♀️", text: "মাইন্ডফুলনেস এক্সারসাইজ করান" },
+            { id: 30, emoji: "👪", text: "পরিবারের সাথে পড়া শেয়ার করুন" },
+            { id: 31, emoji: "🏅", text: "চ্যালেঞ্জ সেট করে মোটিভেট করুন" },
+            { id: 32, emoji: "💡", text: "ভালো আলোর ব্যবস্থা করুন পড়ার জায়গায়" },
+            { id: 33, emoji: "🪑", text: "আরামদায়ক চেয়ার ও টেবিল ব্যবহার করুন" },
+            { id: 34, emoji: "🤸", text: "পড়ার আগে হালকা স্ট্রেচিং করান" },
+            { id: 35, emoji: "💬", text: "শিশুর মতামত নিয়ে প্ল্যান করুন" },
+            { id: 36, emoji: "💻", text: "ডিজিটাল টুলস সাবধানে ব্যবহার করুন" },
+            { id: 37, emoji: "🎭", text: "রোল প্লে করে শেখান" },
+            { id: 38, emoji: "🏷️", text: "প্রশংসা কার্ড তৈরি করুন" },
+            { id: 39, emoji: "💧", text: "পর্যাপ্ত পানি পান করান" },
+            { id: 40, emoji: "🌙", text: "ঘুমের আগে পড়া এড়িয়ে চলুন" },
+            { id: 41, emoji: "🎉", text: "সপ্তাহান্তে ফান ডে রাখুন" },
+            { id: 42, emoji: "📲", text: "লার্নিং অ্যাপস ব্যবহার করুন" },
+            { id: 43, emoji: "⚡", text: "শিশুর এনার্জি সবচেয়ে বেশি সময়ে পড়ান" },
+            { id: 44, emoji: "😊", text: "নেগেটিভ চিন্তা এড়ানো শেখান" },
+            { id: 45, emoji: "📚", text: "পরিবারের সাথে রিডিং টাইম করুন" },
+            { id: 46, emoji: "📝", text: "গোল সেটিং ওয়ার্কশিট তৈরি করুন" },
+            { id: 47, emoji: "💡", text: "ক্রিয়েটিভ থিঙ্কিং গেমস খেলুন" },
+            { id: 48, emoji: "🎶", text: "রিল্যাক্সেশন মিউজিক চালান" },
+            { id: 49, emoji: "👩‍🏫", text: "শিক্ষকের সাথে নিয়মিত যোগাযোগ রাখুন" },
+            { id: 50, emoji: "⏳", text: "ধৈর্য ধরুন এবং ধারাবাহিক থাকুন" }
+        ];
+
+        let allTips = [...defaultTips];
+        let deferredPrompt = null;
+        let installInterval = null;
+
+        // লোকাল স্টোরেজ থেকে অতিরিক্ত উপায় লোড
+        function loadAdditionalTips() {
+            const saved = localStorage.getItem('additionalTips');
+            if (saved) {
+                const extra = JSON.parse(saved);
+                allTips = [...defaultTips, ...extra];
+            }
+        }
+
+        // সব টিপ রেন্ডার করুন
+        function renderTips() {
+            const grid = document.getElementById('tips-grid');
+            grid.innerHTML = '';
+            
+            allTips.forEach(tip => {
+                const cardHTML = `
+                <div class="tip-card">
+                    <div class="emoji">${tip.emoji}</div>
+                    <div class="tip-number">${tip.id}</div>
+                    <p class="tip-text">${tip.text}</p>
+                    <button class="share-btn" onclick="shareTip(${tip.id})">
+                        📤 এই উপায়টি শেয়ার করুন
+                    </button>
+                </div>`;
+                grid.innerHTML += cardHTML;
+            });
+            
+            // যদি কোনো টিপ না থাকে (কখনো হবে না)
+            if (allTips.length === 0) {
+                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; font-size:1.5rem; padding:40px;">কোনো উপায় নেই! নতুন যোগ করুন 🪄</p>`;
+            }
+        }
+
+        // টিপ শেয়ার
+        function shareTip(id) {
+            const tip = allTips.find(t => t.id === id);
+            const shareText = `🪄 শিশুর মনোযোগ বাড়ানোর উপায় #\( {id}:\n \){tip.emoji} ${tip.text}\n\nডিজনি স্টাইলের পুরো অ্যাপটি ইনস্টল করুন 👉 ${window.location.href}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'মনোযোগী শিশু অ্যাপ',
+                    text: shareText
+                });
+            } else {
+                // কপি টু ক্লিপবোর্ড
+                navigator.clipboard.writeText(shareText).then(() => {
+                    const btns = document.querySelectorAll('.share-btn');
+                    for (let btn of btns) {
+                        if (btn.getAttribute('onclick').includes(id)) {
+                            const original = btn.innerHTML;
+                            btn.innerHTML = '✅ কপি হয়েছে!';
+                            setTimeout(() => { btn.innerHTML = original; }, 2000);
+                        }
+                    }
+                });
+            }
+        }
+
+        // পুরো অ্যাপ শেয়ার
+        function shareApp() {
+            const text = `🪄 শিশুদের পড়াশোনায় মনোযোগ বাড়ানোর ৫০+ ডিজনি কার্টুন স্টাইলের মজার উপায়!\nলেখার রং নিজে নিজে বদলায় ✨\nএখনই ইনস্টল করুন 👇`;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'মনোযোগী শিশু - ডিজনি PWA',
+                    text: text,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(text + '\n' + window.location.href);
+                alert('✅ লিঙ্ক কপি হয়েছে! সোশ্যাল মিডিয়ায় পেস্ট করুন');
+            }
+        }
+
+        // ইনস্টল ব্যানার দেখানোর ফাংশন
+        function showInstallBanner() {
+            const banner = document.getElementById('install-banner');
+            if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+                return; // ইতিমধ্যে ইনস্টল করা আছে
+            }
+            banner.style.display = 'block';
+        }
+
+        function hideInstallBanner() {
+            document.getElementById('install-banner').style.display = 'none';
+        }
+
+        // ইনস্টল করা
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choice) => {
+                    if (choice.outcome === 'accepted') {
+                        console.log('✅ অ্যাপ ইনস্টল হয়েছে');
+                    }
+                    deferredPrompt = null;
+                    hideInstallBanner();
+                });
+            }
+        }
+
+        // নতুন উপায় যোগ করার মোডাল
+        function showAddModal() {
+            document.getElementById('add-modal').style.display = 'flex';
+        }
+        
+        function hideAddModal() {
+            document.getElementById('add-modal').style.display = 'none';
+        }
+        
+        function addNewTip() {
+            const text = document.getElementById('new-tip-text').value.trim();
+            let emoji = document.getElementById('new-tip-emoji').value.trim();
+            
+            if (!text) {
+                alert('উপায় লিখতে হবে! 🪄');
+                return;
+            }
+            
+            if (!emoji) emoji = '✨';
+            
+            // নতুন আইডি
+            const maxId = Math.max(...allTips.map(t => t.id));
+            const newTip = {
+                id: maxId + 1,
+                emoji: emoji,
+                text: text
+            };
+            
+            allTips.push(newTip);
+            
+            // লোকাল স্টোরেজে সেভ (শুধু অতিরিক্তগুলো)
+            const extraTips = allTips.filter(t => t.id > 50);
+            localStorage.setItem('additionalTips', JSON.stringify(extraTips));
+            
+            hideAddModal();
+            renderTips();
+            
+            // সাকসেস মেসেজ
+            const success = document.createElement('div');
+            success.style.cssText = 'position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#00FF00; color:#333; padding:15px 30px; border-radius:50px; box-shadow:0 10px 0 #008000; font-size:1.2rem;';
+            success.textContent = '🎉 নতুন উপায় যোগ হয়েছে!';
+            document.body.appendChild(success);
+            setTimeout(() => success.remove(), 3000);
+        }
+
+        // PWA ইনস্টল প্রম্পট ধরা
+        function setupPWA() {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                console.log('📲 ইনস্টল প্রম্পট রেডি');
+            });
+            
+            // ইতিমধ্যে ইনস্টল কিনা চেক
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                document.getElementById('install-status').innerHTML = '✅ ইনস্টল করা আছে';
+            }
+            
+            // প্রতি ২০ সেকেন্ডে ব্যানার দেখানো (যদি ইনস্টল না হয়)
+            installInterval = setInterval(() => {
+                if (!window.matchMedia('(display-mode: standalone)').matches) {
+                    showInstallBanner();
+                }
+            }, 20000);
+            
+            // আপডেট নোটিফিকেশন (যখন ডেভেলপার নতুন ভার্সন আপলোড করবেন)
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (Notification.permission === 'granted') {
+                        new Notification('🎉 অ্যাপ আপডেট হয়েছে!', {
+                            body: 'নতুন কার্যকরী উপায় যোগ হয়েছে! রিফ্রেশ করুন 🪄',
+                            icon: 'https://via.placeholder.com/192x192/FF1493/FFFFFF?text=🪄'
+                        });
+                    } else {
+                        Notification.requestPermission();
+                    }
+                });
+            }
+        }
+
+        // সার্ভিস ওয়ার্কার রেজিস্টার
+        function registerServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('✅ PWA সার্ভিস ওয়ার্কার রেজিস্টার হয়েছে', reg))
+                    .catch(err => console.log('⚠️ সার্ভিস ওয়ার্কার ফেল:', err));
+            }
+        }
+
+        // অ্যাপ শুরু
+        function initApp() {
+            loadAdditionalTips();
+            renderTips();
+            setupPWA();
+            registerServiceWorker();
+            
+            // কিছু স্পার্কেল অ্যানিমেশন হেডারে
+            console.log('%c🪄 ডিজনি স্টাইল PWA তৈরি হয়েছে! শিশুরা মজা করুক 🐭', 'color:#FF1493; font-size:18px; font-family:Comic Neue');
+        }
+        
+        window.onload = initApp;
+    </script>
+</body>
+      </html>
